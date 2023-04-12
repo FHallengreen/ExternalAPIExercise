@@ -30,11 +30,11 @@ public class DemoController {
     public CombinedResponse getName(@PathVariable String name){
         Optional<CombinedResponse>  response = combinedResponseRepository.findById(name);
         if (response.isPresent()){
-            System.out.println("Already exists was called");
+            System.out.println(name + " already exists was called");
             return response.get();
         }
         else {
-            System.out.println("Does not already exist was called");
+            System.out.println(name + " does not already exist was called");
 
             return remoteApiTester.fetchNameDetails(name).block();
         }
