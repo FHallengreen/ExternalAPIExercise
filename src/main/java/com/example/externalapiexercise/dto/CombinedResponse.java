@@ -3,6 +3,7 @@ package com.example.externalapiexercise.dto;
 import com.example.externalapiexercise.entity.Age;
 import com.example.externalapiexercise.entity.Gender;
 import com.example.externalapiexercise.entity.Nationality;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,7 +11,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
 public class CombinedResponse {
+    @Id
+    @Column(name = "name")
     String name;
     String gender;
     double genderProbability;
